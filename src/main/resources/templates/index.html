@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <h1  th:text="${message}">hello world</h1>
+    <h1 th:text="|welcome to application,${username}|"></h1>
+    <a th:if="${flag=='yes'}" th:href="@{http://www.baidu.com}">百度</a>
+    <a th:unless="${flag=='no'}" th:href="@{https://v.qq.com/}">腾讯</a>
+    <table>
+        <tr th:each="user,iterStat:${users}">
+            <td th:text="${user.name}">neo</td>
+            <td th:text="${user.age}">6</td>
+            <td th:text="${user.pass}">20</td>
+            <td th:text="${iterStat.index}">index</td>
+        </tr>
+    </table>
+
+    <form method="post" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="file" /> <br/><br/>
+        <input type="submit" value="submit"/>
+    </form>
+
+    <form method="post" action="/uploadMore" enctype="multipart/form-data">
+        文件一: <input type="file" name="file" /> <br/><br/>
+        文件二: <input type="file" name="file" /> <br/><br/>
+        文件三: <input type="file" name="file" /> <br/><br/>
+        <input type="submit" value="submit"/>
+    </form>
+
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+server:
+  port: 8080
+#  tomcat:
+#    max-swallow-size: 100MB
+
+spring:
+  thymeleaf:
+    cache: false
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 1000MB
+      location: e:/upload
